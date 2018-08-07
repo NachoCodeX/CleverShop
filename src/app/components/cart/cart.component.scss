@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+
+.cart{
+    // background: steelblue;
+    height: 100%;
+    display: grid;
+    grid-template-rows: .1fr auto .5fr;
+    grid-gap: 10px;
+
+   
+}

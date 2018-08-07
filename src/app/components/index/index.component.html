@@ -1,0 +1,21 @@
+<main class="grid">
+  <div class="title__container">
+    <p class="title__text">
+      Clever Shop
+    </p>
+  </div>
+
+  <div class="form__container">
+    <form (ngSubmit)="onSubmit($event)" [formGroup]="signInForm" class="form">
+      <mat-form-field class="full-width">
+        <input required formControlName="email" name="email" type="email" matInput placeholder="Email" value="">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input required formControlName="password" name="password" type="password" matInput placeholder="Password" value="">
+      </mat-form-field>
+
+      <button mat-stroked-button color="primary">Login</button>
+    </form>
+  </div>
+</main>

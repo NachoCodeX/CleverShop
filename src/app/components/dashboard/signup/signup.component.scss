@@ -1,0 +1,35 @@
+.wrapper{
+    // height:100vh;
+    min-height: calc(100vh - 4rem);
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form{
+    min-width:400px;
+    width: 400px;
+    padding: 10px;
+    &__title{
+        font-size: 22px;
+        padding: 10px;
+        text-align: center;
+        font-weight: 100;
+    }
+    &__img{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        img{
+            $s:100px;
+          width: $s;
+          height: $s;
+          border-radius: 50%;
+        }
+    }
+    &__admin{
+        margin-bottom: 1rem;
+    }
+}

@@ -1,0 +1,8 @@
+<main class="cart__main">
+  <ul class="cart__list">
+    <cart-item *ngFor="let item of products | async" [product]="item"></cart-item>
+  </ul>
+  <ng-template #emptyCart>
+    <p>Any product in cart</p>
+  </ng-template>
+</main>

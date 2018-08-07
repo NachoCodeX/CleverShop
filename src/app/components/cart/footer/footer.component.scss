@@ -1,0 +1,51 @@
+@import '~@angular/material/theming';
+
+
+.cart__footer{
+    background: #fff;
+    //*HEADER
+    &__header{
+        padding: 10px;
+        border-bottom: thin solid rgba(gray,0.1);
+        p{
+            font-size: 16px;
+            color:map-get($mat-light-blue,400 );
+            font-weight: bold;
+        }
+    }
+    //END HEADER
+    //LIST
+    &__list{
+        &__item{
+            display: flex;
+            justify-content: space-between;
+            padding: 8px;
+            border-bottom: thin solid rgba(gray,0.1);
+
+            &__text{
+                font-size: 12px;
+                &--bold{
+                    font-weight: bold;
+                }
+                &--tax{
+                    color:map-get($mat-light-blue, 400);
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    //END LIST
+    //PAY 
+    &__pay{
+        background: map-get($mat-light-blue, 500);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        span{
+            color:#fff;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    }
+
+}

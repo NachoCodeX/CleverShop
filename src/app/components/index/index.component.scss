@@ -1,0 +1,44 @@
+@import '~@angular/material/theming';
+
+
+@mixin flexCenterXY {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.grid{
+    display: grid;
+    height:100vh;
+    grid-template-rows: .5fr 1fr;
+}
+
+.title__{
+    &container{
+        @include flexCenterXY; 
+        background: #fff;
+    }
+
+
+    &text{
+        font-family: 'Pacifico', cursive;        
+        font-size: 2.5rem;
+        font-weight: 100;
+        color:lightblue;
+    }
+}
+
+.form__container{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+
+}
+
+.form{
+    padding: 10px;
+    max-width: 420px;
+}

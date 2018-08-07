@@ -1,0 +1,10 @@
+ .cart__main{
+    // overflow: hidden;
+    // height:100%;
+    // overflow-y: scroll;
+    height:200px;
+        .cart__list{
+            overflow-y: scroll;
+            height:100%;
+        }
+}

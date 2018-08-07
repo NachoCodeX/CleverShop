@@ -1,0 +1,27 @@
+<div class="gallery__container">
+  <div class="gallery__search">
+
+    <div class="input__field">
+      <input (ngModelChange)="onChange($event)" [(ngModel)]="productText" placeholder="Search a product" [ngClass]="searchInputClasses"
+        type="text">
+      <mat-icon *ngIf="!hasError(); else iconerror" color="primary">search</mat-icon>
+      <ng-template #iconerror>
+        <mat-icon color="warn">search</mat-icon>
+      </ng-template>
+      <span class="input__error" *ngIf="hasError()">No results</span>
+    </div>
+
+  </div>
+  <div *ngIf="(products | async).length>0 && productText.length>0 ; else category_gallery" class="gallery">
+
+    <gallery-item *ngFor="let product of products | async" [isProduct]="true" [productData]="product" categoryImage="../../../../assets/teddy.jpg"></gallery-item>
+
+  </div>
+
+  <ng-template #category_gallery>
+    <div class="gallery">
+      <gallery-item (categorySelect)="onItemClick($event)" *ngFor="let category of categories" [isProduct]="false" [categoryColor]="category.color"
+        [categoryName]="category.name" [categoryImage]="category.image"></gallery-item>
+    </div>
+  </ng-template>
+</div>

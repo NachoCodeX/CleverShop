@@ -1,0 +1,11 @@
+<div *ngIf="!isProduct; else product" (click)="onClick(categoryName)" class="gallery__item">
+  <img [src]="categoryImage" alt="">
+  <p>{{categoryName}}</p>
+</div>
+
+<ng-template #product>
+  <div (click)="addProduct(productData)" class="gallery__item">
+    <img [src]="categoryImage" alt="">
+    <p>{{productData.name}}</p>
+  </div>
+</ng-template>

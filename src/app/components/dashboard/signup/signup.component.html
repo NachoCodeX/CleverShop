@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <!-- (ngSubmit)="onSubmit($event)" [formGroup]="signInForm" -->
+  <h1 class="form__title">Registrar usuarios</h1>
+  <form (ngSubmit)="onSubmit($event)" [formGroup]="signupForm" class="form">
+    <div class="form__img">
+      <img src="../../../../assets/dummy_user.png" alt="">
+    </div>
+    <mat-form-field class="full-width">
+      <input formControlName="firstName" required name="firstName" type="text" matInput placeholder="First name" value="">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input formControlName="lastName" required name="lastName" type="text" matInput placeholder="Last name" value="">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input formControlName="age" required name="age" type="number" matInput placeholder="Age" value="">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input formControlName="email" required name="email" type="email" matInput placeholder="Email" value="">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <input formControlName="password" required name="password" type="password" matInput placeholder="Password" value="">
+    </mat-form-field>
+    <div class="form__admin full-width">
+      <mat-checkbox formControlName="isAdmin">Admin</mat-checkbox>
+    </div>
+
+    <button mat-stroked-button color="primary">Sign up</button>
+  </form>
+</div>

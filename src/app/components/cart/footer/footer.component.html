@@ -1,0 +1,23 @@
+<footer class="cart__footer">
+    <header class="cart__footer__header">
+        <p>Add Discount</p>
+    </header>
+    <ul class="cart__footer__list">
+        <li class="cart__footer__list__item">
+            <span class="cart__footer__list__item__text cart__footer__list__item__text--normal">Sub-total</span>
+            <span class="cart__footer__list__item__text cart__footer__list__item__text--bold">{{getTotal()}}</span>
+        </li>
+        <li class="cart__footer__list__item">
+            <span class="cart__footer__list__item__text cart__footer__list__item__text--tax">IVA </span>
+            <span class="cart__footer__list__item__text cart__footer__list__item__text--bold">16.7</span>
+        </li>
+        <li class="cart__footer__list__item">
+            <span class="cart__footer__list__item__text cart__footer__list__item__text--normal">Total</span>
+            <span class="cart__footer__list__item__text cart__footer__list__item__text--bold">{{getTotal()}}</span>
+        </li>
+    </ul>
+    <div class="cart__footer__pay">
+        <span>Pay</span>
+        <span>{{getTotal()|currency}}</span>
+    </div>
+</footer>

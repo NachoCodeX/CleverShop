@@ -1,0 +1,47 @@
+@import '../variables';
+@import '~@angular/material/theming';
+
+
+.example-sidenav{
+    width: 250px;
+}
+
+
+
+
+.header{
+    background:map-get($mat-light-blue, 300 );
+    
+    // color:#fff;
+    display: grid;
+    grid-template-columns: 20px auto;
+    border-bottom: thin solid rgba(gray,.1);
+    div{
+        display: flex;
+        justify-content: center;
+    }
+    .title__text{
+        color:#fff;
+        font-family: 'Pacifico', cursive;
+        font-size: 2rem;
+    }
+
+       
+}
+
+.menu{
+    
+    &__item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        cursor: pointer;
+        &:hover{
+            background: rgba(gray,0.2);
+        }
+    }
+    &__text{
+        margin-left: .5rem;
+    }
+}

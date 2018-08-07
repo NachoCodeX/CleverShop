@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Pacifico');
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+@include mat-core();
+@import './variables';
+
+
+.input{
+    width: 100%;
+    padding: 8px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid map-get($mat-light-blue, 300);
+    background: transparent;
+    font-size: 18px;
+    &__field{
+        display: grid;
+        grid-template-columns: auto 30px;
+        
+        // background: red;
+        height:2rem;
+        width: 100%;
+    }
+    &--error{
+        border-bottom: 2px solid map-get($mat-red,500);
+    }
+    &__error{
+        font-size: 10px;
+        color: map-get($mat-red,500);
+    }
+}
+
+
+$primary: mat-palette($mat-light-blue);
+$accent:  mat-palette($mat-amber, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$warn:    mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$theme: mat-light-theme($primary, $accent, $warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+
+.full-width{
+    width: 100%
+}
+
+
+.light-gray{
+    color: rgba(gray,0.2);
+}

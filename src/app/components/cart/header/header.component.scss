@@ -1,0 +1,23 @@
+@import '~@angular/material/theming';
+
+
+.cart__header{
+    background:tomato;
+    &__list{
+
+        &__item{
+            display: flex;
+            align-items: center;
+            background: #fff;
+            padding: 10px;
+            border-bottom: thin solid rgba(gray,0.1);
+          
+
+            &__text{
+                font-size: 13px;
+                margin-left: .5rem;
+                color: map-get($mat-light-blue,400 );
+            }
+        }
+    }
+}
