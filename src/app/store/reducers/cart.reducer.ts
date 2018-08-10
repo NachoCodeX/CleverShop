@@ -1,11 +1,11 @@
 import { State, Action, StateContext } from '@ngxs/store'
-import { Product } from '../../app.model';
+import { Product, CartProduct } from '../../app.model';
 import { AddToCart, ClearCart, RemoveToCart } from '../actions/cart.actions';
 import { ApiService } from '../../services/api/api.service';
 import { ConfirmSale } from '../actions/cart.actions';
 
 interface CartStateModel {
-    products: Product[]
+    products: CartProduct[]
 }
 
 
@@ -75,7 +75,8 @@ export class CartState {
                 name: payload.name,
                 quantity: 1,
                 price: payload.price,
-                discount: payload.discount
+                discount: payload.discount,
+                maxQuantity: payload.quantity
             })
         }
         ctx.patchState({

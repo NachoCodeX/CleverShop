@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
   constructor(private $store: Store) { }
 
   ngOnInit() {
-    // this.$store.dispatch(new ClearCart())
+    this.$store.dispatch(new ClearCart())
   }
 
 

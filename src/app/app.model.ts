@@ -9,7 +9,15 @@ export interface Product {
     price: number,
     quantity: number,
     discount: number
+}
 
+export interface CartProduct {
+    _id?: string,
+    name: string,
+    price: number,
+    quantity: number,
+    maxQuantity?: number,
+    discount: number
 }
 
 

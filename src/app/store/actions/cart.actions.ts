@@ -1,4 +1,4 @@
-import { Product } from "../../app.model";
+import { Product, CartProduct } from "../../app.model";
 
 export class AddToCart {
     static readonly type = "[Cart] Add"
@@ -16,5 +16,5 @@ export class RemoveToCart {
 
 export class ConfirmSale {
     static readonly type: string = "[Cart] PAY"
-    constructor(public products: Product[], public total: number, public user: string) { }
+    constructor(public products: CartProduct[], public total: number, public user: string) { }
 }

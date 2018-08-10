@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { AddToCart } from '../../../store/actions/cart.actions';
-import { Product } from '../../../app.model'
+import { Product, CartProduct } from '../../../app.model'
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 import { MatSnackBar } from '@angular/material';
@@ -34,7 +34,7 @@ export class ItemComponent2 implements OnInit {
 
   @Output() categorySelect: EventEmitter<string> = new EventEmitter<string>()
 
-
+  //private
 
 
   constructor(private snackBar: MatSnackBar, private $store: Store) {

@@ -73,6 +73,15 @@
             font-weight: bold;
             color:map-get($mat-light-blue, 300 );
         }
+        &__quanity__input{
+            // background: red;
+            outline: none;
+            border: none;
+            width: 100%;
+            color:map-get($mat-light-blue, 300 );
+            font-size: 16px;
+            font-weight: bold;
+        }
     }
     //END INFO
     //START ACTIONS
