@@ -8,13 +8,30 @@
     flex-direction: column;
     height: 10rem;
     border: thin solid rgba(gray,0.1);
-    border-top: 10px solid map-get($mat-light-blue, 500 );
     background: #fff;
     cursor: pointer;
+    
+    &--normal{
+        border-top: 10px solid map-get($mat-light-blue, 300 );
+    }
+    &--outofstock{
+        border-top: 10px solid map-get($mat-red, 400 );
+    }
 
     img{
         $s:80px;
         height:$s;
         width: $s;
+    }
+    .item__icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 8rem;
+        // background: red;
+        width: 100%;
+        height: 100%;
+        color:rgba(gray,.1);
+        opacity:0.8;
     }
 }

@@ -9,15 +9,37 @@
         </li>
         <li class="cart__footer__list__item">
             <span class="cart__footer__list__item__text cart__footer__list__item__text--tax">IVA </span>
-            <span class="cart__footer__list__item__text cart__footer__list__item__text--bold">16.7</span>
+            <span class="cart__footer__list__item__text cart__footer__list__item__text--bold">16%</span>
         </li>
         <li class="cart__footer__list__item">
             <span class="cart__footer__list__item__text cart__footer__list__item__text--normal">Total</span>
             <span class="cart__footer__list__item__text cart__footer__list__item__text--bold">{{getTotal()}}</span>
         </li>
     </ul>
-    <div class="cart__footer__pay">
+
+    <div *ngIf="!isLoading && !isSuccess && !isError; else loading" (click)="confirmSale()" class="cart__footer__pay">
         <span>Pay</span>
         <span>{{getTotal()|currency}}</span>
     </div>
+
+    <ng-template #loading>
+        <div *ngIf="isLoading && !isSuccess && !isError; else success" class="cart__footer__pay cart__footer__pay--loading">
+            <p>Loading...</p>
+            <mat-progress-bar color="accent" mode="buffer"></mat-progress-bar>
+        </div>
+    </ng-template>
+
+    <ng-template #success>
+        <div *ngIf="isSuccess && !isError && !isLoading; else error" class="cart__footer__pay cart__footer__pay--success">
+            <span>Sucess</span>
+            <mat-icon style="color:#fff;">check_circle</mat-icon>
+        </div>
+    </ng-template>
+
+    <ng-template #error>
+        <div *ngIf="isError && !isSuccess && !isLoading" class="cart__footer__pay cart__footer__pay--error">
+            <span>Something went wrong :(</span>
+            <mat-icon style="color:#fff;">report_problem</mat-icon>
+        </div>
+    </ng-template>
 </footer>

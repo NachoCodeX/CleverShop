@@ -16,6 +16,10 @@ export class AppComponent {
   @Select(state => state.app.user.isAdmin) isAdmin: Observable<boolean>
 
   constructor(private $store: Store, private $router: Router, private route: ActivatedRoute) { }
+
+  showProductPage() {
+    this.$store.dispatch(new Navigate(['dashboard/product']))
+  }
   showSignup() {
     this.$store.dispatch(new Navigate(['dashboard/signup']))
   }

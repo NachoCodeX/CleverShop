@@ -2,6 +2,7 @@
 @import '~@angular/material/theming';
 
 
+
 .example-sidenav{
     width: 250px;
 }
@@ -30,18 +31,47 @@
 }
 
 .menu{
-    
+    background:map-get($mat-light-blue,400);
+    height:100%;
+    &__icon{
+        position: relative;
+        z-index: 100;
+    }
     &__item{
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 10px;
         cursor: pointer;
+        color: #fff;
+        position: relative;
         &:hover{
             background: rgba(gray,0.2);
+            
+            &::before{
+                width: 100%;
+            }
+            color: map-get($mat-light-blue,400 );
+            // box-shadow: inset 0px 10px 0px 0px #fff;
         }
+        &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background: #fff;
+            top: 0;
+            left:-50px;
+            border-radius: 20px;
+            z-index:1;
+            transition: all ease .3s;
+        }
+        
     }
     &__text{
+        position: relative;
         margin-left: .5rem;
+        z-index:100;
     }
 }

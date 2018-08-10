@@ -3,6 +3,7 @@
 
 .cart__footer{
     background: #fff;
+    overflow: hidden;
     //*HEADER
     &__header{
         padding: 10px;
@@ -37,14 +38,72 @@
     //END LIST
     //PAY 
     &__pay{
-        background: map-get($mat-light-blue, 500);
+        $mainColor: map-get($mat-light-blue, 500);
+        background:$mainColor;
         padding: 20px;
         display: flex;
         justify-content: space-between;
+        cursor: pointer;
+        transition: all ease 0.3s;
+        overflow: hidden;
         span{
             color:#fff;
             font-size: 22px;
             font-weight: bold;
+        }
+        &:active{
+            background: darken($mainColor,5);
+            transform: scale(0.95);
+        }
+
+        &--loading{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height:4rem;
+            p{
+                color:#fff;
+                font-size: 12px;
+                margin-bottom: .2rem;
+            }
+        }
+
+        &--success,&--error{
+            display: flex;
+            align-items: center;
+            position: relative;
+            @keyframes enter {
+                0% {
+                    transform: translateY(-100%);
+                }
+                50%{
+                    transform: translateY(8%);
+                }
+                80%{
+                    transform: translateY(4%);
+                }
+                95%{
+                    transform: translateY(-2%);
+                }			
+                100% {
+                    transform: translateY(0%);
+                }	
+            }
+            animation: enter .5s linear;
+
+        }
+
+        &--success{
+            background: map-get($mat-green, 300);
+        
+        }
+        &--error{
+            background: map-get($mat-red, 300);
+            span{
+                
+                font-size: 16px;
+            }
         }
     }
 

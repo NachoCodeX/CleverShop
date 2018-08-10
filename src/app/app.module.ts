@@ -9,16 +9,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 //Angular Material
 import { CustomMaterialModule } from './angular-material';
+///
 import { IndexComponent } from './components/index/index.component'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 import { NgxsModule } from '@ngxs/store';
 import { PageNotFoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component'
-import AppState from './store/reducers/app.reducer';
-import CartState from './store/reducers/cart.reducer';
+//REDUCERS
+import { AppState } from './store/reducers/app.reducer';
+import { CartState } from './store/reducers/cart.reducer';
+import { ProductReducer } from './store/reducers/product.reducer';
+//
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin'
-import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin'
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { CartComponent } from './components/cart/cart.component';
@@ -32,6 +35,8 @@ import { ItemComponent2 } from './components/gallery/item/item.component';
 import { SalesComponent } from './components/dashboard/sales/sales.component';
 import { IndexDashboardComponent } from './components/dashboard/index-dashboard/index-dashboard.component';
 import { SignupComponent } from './components/dashboard/signup/signup.component';
+import { ProductFormComponent } from './components/dashboard/product-form/product-form.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,9 @@ import { SignupComponent } from './components/dashboard/signup/signup.component'
     ItemComponent2,
     SalesComponent,
     IndexDashboardComponent,
-    SignupComponent
+    SignupComponent,
+    ProductFormComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -60,12 +67,13 @@ import { SignupComponent } from './components/dashboard/signup/signup.component'
     HttpClientModule,
     NgxsModule.forRoot([
       AppState,
-      CartState
+      CartState,
+      ProductReducer
     ]),
     NgxsStoragePluginModule.forRoot(),
     NgxsRouterPluginModule.forRoot(),
     // NgxsLoggerPluginModule.forRoot(),
-    NgxsReduxDevtoolsPluginModule.forRoot()
+    // NgxsReduxDevtoolsPluginModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

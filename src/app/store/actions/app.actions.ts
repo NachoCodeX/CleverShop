@@ -1,4 +1,13 @@
-import { Credentials, User } from "../../app.model";
+import { Credentials, Product } from "../../app.model";
+
+
+
+
+
+// export class ConfirmSale {
+//     static readonly type: string = "[User] PAY"
+//     constructor(public products: Product[], public total: number, public user: string) { }
+// }
 
 export class SearchProduct {
     static readonly type: string = "[User] Search"

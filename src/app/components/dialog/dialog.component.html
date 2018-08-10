@@ -1,0 +1,25 @@
+<div class="modal__backdrop">
+  <div class="modal__container">
+    <div class="modal__dialog">
+      <header class="modal__dialog__header">
+        <span class="modal__dialog__header__title">
+          Pay confirmation
+
+        </span>
+      </header>
+      <main class="modal__dialog__main">
+        <ul>
+          <li *ngFor="let product of products | async">
+            {{product.name}}
+          </li>
+        </ul>
+
+
+      </main>
+      <footer class="modal__dialog__footer">
+        <button (click)="cancel()" class="button button--cancel">Cancel</button>
+        <button (click)="confirm()" class="button button--confirm">Confirm</button>
+      </footer>
+    </div>
+  </div>
+</div>

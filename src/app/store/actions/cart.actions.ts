@@ -14,3 +14,7 @@ export class RemoveToCart {
     constructor(public payload: string) { }
 }
 
+export class ConfirmSale {
+    static readonly type: string = "[Cart] PAY"
+    constructor(public products: Product[], public total: number, public user: string) { }
+}

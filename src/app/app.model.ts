@@ -4,13 +4,15 @@ export type Credentials = {
 }
 
 export interface Product {
-    _id: string,
+    _id?: string,
     name: string,
     price: number,
     quantity: number,
     discount: number
 
 }
+
+
 
 export interface User {
     firstName: string,

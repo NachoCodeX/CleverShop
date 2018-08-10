@@ -24,8 +24,13 @@
     padding: 10px;
 
     // height:100%;
-    max-height: 600px;
+    max-height: 450px;
     // position: relative;
     overflow-y: scroll;
+    &--loading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 

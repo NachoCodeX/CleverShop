@@ -1,8 +1,13 @@
 <main class="cart__main">
-  <ul class="cart__list">
+  <ul *ngIf="(products|async).length >0;else emptyCart" class="cart__list">
     <cart-item *ngFor="let item of products | async" [product]="item"></cart-item>
   </ul>
   <ng-template #emptyCart>
-    <p>Any product in cart</p>
+    <ul class="cart__list empty>">
+      <div class="cart__list--empty">
+        <img src="../../../../assets/cartsad.png" alt="">
+        <span>Your shopping cart is empty.</span>
+      </div>
+    </ul>
   </ng-template>
 </main>

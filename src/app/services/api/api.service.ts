@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Credentials } from '../../app.model';
+import { Product } from '../../app.model';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,14 @@ export class ApiService {
 
   public signUp(data) {
     return this.$http.post(`${this.URL_AUTH}/user/signup`, data)
+  }
+
+  public confirmSale(data) {
+    return this.$http.post(`${this.URL_API}/sale`, data)
+  }
+
+  public addProduct(product: Product) {
+    return this.$http.post(`${this.URL_API}/product`, product)
   }
 
 

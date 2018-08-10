@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <!-- (ngSubmit)="onSubmit($event)" [formGroup]="signInForm" -->
+  <form (ngSubmit)="onSubmit()" [formGroup]="productForm" class="form">
+    <h1 class="form__title">Agregar productos</h1>
+    <!-- <div class="form__img">
+      <img src="../../../../assets/dummy_user.png" alt="">
+    </div> -->
+    <mat-form-field class="full-width">
+      <input formControlName="name" required name="Name" type="text" matInput placeholder="Product name" value="">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input formControlName="price" required name="price" type="number" matInput placeholder="Price" value="">
+    </mat-form-field>
+    <mat-form-field class="full-width">
+      <input formControlName="quantity" required name="quantity" type="number" matInput placeholder="Quantity" value="">
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-select formControlName="category" placeholder="Category">
+        <mat-option *ngFor="let category of categoriesSelect" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <button type="submit" mat-stroked-button color="primary">Add product</button>
+  </form>
+</div>

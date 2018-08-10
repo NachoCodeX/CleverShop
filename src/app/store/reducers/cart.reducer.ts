@@ -1,8 +1,10 @@
 import { State, Action, StateContext } from '@ngxs/store'
 import { Product } from '../../app.model';
 import { AddToCart, ClearCart, RemoveToCart } from '../actions/cart.actions';
+import { ApiService } from '../../services/api/api.service';
+import { ConfirmSale } from '../actions/cart.actions';
 
-export interface CartStateModel {
+interface CartStateModel {
     products: Product[]
 }
 
@@ -14,16 +16,33 @@ export interface CartStateModel {
         products: []
     }
 })
-export default class CartState {
+export class CartState {
 
-    constructor() { }
+    constructor(private apiService: ApiService) { }
+    @Action(ConfirmSale)
+    confirmSale(ctx: StateContext<CartStateModel>, { total, products, user }: ConfirmSale) {
+
+        // this.products
+        this.apiService.confirmSale({ total, products, user })
+            .subscribe(
+                (response) => {
+                    console.log(response);
+                }
+            )
+    }
+
 
     @Action(RemoveToCart)
     removeToCart(ctx: StateContext<CartStateModel>, { payload }: RemoveToCart) {
         const products: Product[] = ctx
             .getState()
             .products
-            .filter((product: Product) => product._id !== payload)
+            .filter((product: Product) => {
+                const isFound: boolean = product._id !== payload
+
+
+                return isFound
+            })
 
 
 

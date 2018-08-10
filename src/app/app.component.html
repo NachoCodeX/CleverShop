@@ -3,25 +3,31 @@
     <mat-drawer *ngIf="isLoggedIn | async" #drawer class="example-sidenav" mode="side" [opened]="opened">
         <ul class="menu">
             <li (click)="showDashboard()" class="menu__item">
-                <mat-icon>home</mat-icon>
+                <mat-icon class="menu__icon">home</mat-icon>
                 <span class="menu__text">Home</span>
 
             </li>
 
             <li (click)="showSalesPage()" *ngIf=" (isAdmin | async) " class="menu__item">
-                <mat-icon>trending_up</mat-icon>
-                <span class="menu__text">Ventas</span>
+                <mat-icon class="menu__icon">trending_up</mat-icon>
+                <span class="menu__text">Sales</span>
             </li>
 
+
             <li (click)="showSignup()" *ngIf=" (isAdmin | async) " class="menu__item">
-                <mat-icon>person_add</mat-icon>
-                <span class="menu__text">Usuarios</span>
+                <mat-icon class="menu__icon">person_add</mat-icon>
+                <span class="menu__text">Users</span>
+            </li>
+
+            <li (click)="showProductPage()" *ngIf=" (isAdmin | async) " class="menu__item">
+                <mat-icon class="menu__icon">add_box</mat-icon>
+                <span class="menu__text">Products</span>
             </li>
 
 
 
             <li (click)="logout()" class="menu__item">
-                <mat-icon>power_settings_new</mat-icon>
+                <mat-icon class="menu__icon">power_settings_new</mat-icon>
                 <span class="menu__text">Logout</span>
             </li>
         </ul>

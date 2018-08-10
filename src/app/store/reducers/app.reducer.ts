@@ -1,12 +1,12 @@
 import { State, Action, StateContext } from '@ngxs/store'
 import { User, Product } from '../../app.model';
-import { SignIn, Logout, SearchProduct, ClearProducts, SignUp } from '../actions/app.actions';
+import { SignIn, Logout, SearchProduct, ClearProducts, SignUp, } from '../actions/app.actions';
 import { ApiService } from '../../services/api/api.service';
 import { MatSnackBar } from '@angular/material';
 import { NgZone } from '@angular/core';
 
 
-export interface AppStateModel {
+interface AppStateModel {
     isLoggedIn: boolean,
     user: User,
     products: Product[]
@@ -29,19 +29,36 @@ export interface AppStateModel {
         products: []
     }
 })
-export default class AppState {
+export class AppState {
     BASE_URL: string = 'http://localhost:7000'
     constructor(private zone: NgZone, private snackBar: MatSnackBar, private apiService: ApiService) { }
 
+    private updateProductQuantity(products: Product[]) {
+
+    }
     private showError(message: string): void {
         this.zone.run(() => {
             this.snackBar.open(message, 'Undo', {
                 verticalPosition: 'bottom',
                 horizontalPosition: 'center',
+                duration: 1000
             })
 
         })
     }
+
+
+    // @Action(ConfirmSale)
+    // confirmSale(ctx: StateContext<AppState>, { total, products, user }: ConfirmSale) {
+
+    //     // this.products
+    //     this.apiService.confirmSale({ total, products, user })
+    //         .subscribe(
+    //             (response) => {
+    //                 console.log(response);
+    //             }
+    //       )
+    // }
 
 
     @Action(SignUp)
